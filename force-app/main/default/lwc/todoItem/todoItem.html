@@ -1,0 +1,18 @@
+<template>
+    <div class={ContainerCLass} >
+        <div class="slds-col slds-size_1-of-4">
+          {todo.todoName}
+        </div>
+        <div class="slds-col slds-size_1-of-4">
+          <lightning-button-icon icon-name={buttonIcon} class="slds-p-horizontal_medium" onclick={updateHandler}
+          title="Update Todo">
+      </lightning-button-icon>
+      <lightning-button-icon icon-name="utility:delete" onclick={deleteHandler} title="Delete Todo">
+      </lightning-button-icon>
+        </div>     
+      </div> 
+</template>
+
+<!--
+  "slds-grid slds-gutters slds-align_absolute-center todo"
+-->
