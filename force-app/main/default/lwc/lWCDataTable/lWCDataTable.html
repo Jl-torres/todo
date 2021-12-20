@@ -1,9 +1,98 @@
 <template>
+    <lightning-card title="Lightning Datatable Example">
+        <div class="slds-m-around_medium">
+            <div class="slds-grid slds-gutters">
+                  <div class="slds-col slds-size_1-of-4">
+                    <lightning-input 
+                    type="date" 
+                    class="slds-m-bottom_small" 
+                    label="Desde"
+                    value={Desde}
+                    onchange={handleStartDate}></lightning-input>  
+                  </div>
+                  <div class="slds-col slds-size_1-of-4">
+                    <lightning-input 
+                    type="date" 
+                    class="slds-m-bottom_small" 
+                    label="Hasta"
+                    value={Hasta}
+                    onchange={handleEndDate}
+                    ></lightning-input>    
+                  </div>
+                  <div class="slds-col slds-size_1-of-4 slds-m-top_large">
+                    <lightning-button label="Consultar" 
+                        onclick={ConsultarHandler}></lightning-button>
+                  </div>
+                  
+              </div> 
+              <div class="slds-grid slds-gutters D-flex">
+                <div class="slds-col slds-size_2-of-12 w-80">
+                    <lightning-combobox 
+                    value={pageSize}
+                    options={comboBoxOptions}
+                    onchange={handleComboboxChange}
+                    placeholder="5"
+                    label="Rows"
+                    >
+                    </lightning-combobox> 
+                  </div>
+                
+                  <div class="slds-col slds-size_1-of-3">
+                    <lightning-input type="search" 
+                    onchange={handleKeyChange} 
+                    class="slds-m-bottom_small" 
+                    label="Search"
+                    value={searchKey}>
+                    </lightning-input>
+                  </div>
+                </div>
+              </div>          
+
+                <c-my-data-table
+                key-field="id"
+                data={data}
+                columns={columns}
+                sorted-by={sortedBy}
+                sorted-direction={sortedDirection}
+                onsort={sortColumns}
+                 >
+              </c-my-data-table>
+
+            </br>
+            <lightning-layout horizontal-align="space">
+                <lightning-layout-item flexibility="auto">
+                    <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={previousHandler}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto">
+                    Page {page} of {totalPage}
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto">
+                    <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right"
+                        onclick={nextHandler}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+       
+    </lightning-card>  
+</template>
+
+
+<!--
     <div style="height: 300px;">
+        <lightning-input 
+        type="search" 
+        onchange={handleKeyChange} 
+        class="slds-m-bottom_small" 
+        label="Search"
+        value={searchKey}>
+      </lightning-input>
         <c-my-data-table
                 key-field="id"
                 data={contacts}
-                columns={columns}>
+                columns={columns}
+                sorted-by={sortedBy}
+                sorted-direction={sortedDirection} 
+                onsort={sortColumns}>
         </c-my-data-table>
-    </div>    
-</template>
+    </div>  
+-->

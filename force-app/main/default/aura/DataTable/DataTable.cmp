@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller='DataTableAuraServices' access="global" >
+
+    <aura:attribute name="data" type="Object" />
+    <aura:attribute name="columns" type="Object" />
+
+    <aura:handler name="init" value="{! this }" action="{! c.doinit }"/>
+
+    <lightning:datatable
+        keyField="id"
+        columns="{!v.columns }"
+        data="{!v.data}"
+        hideCheckBoxColumn="true"
+        >
+    </lightning:datatable>
+ 
+</aura:component>

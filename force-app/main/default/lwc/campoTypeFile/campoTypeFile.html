@@ -1,0 +1,55 @@
+<template>
+    <div class="form">
+        <h1 class="slds-align_absolute-center slds-text-heading_large font_A">Titulo</h1>
+        <template if:true={loading}>        
+          <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>    
+      </template> 
+             
+        <lightning-input type="file"
+        label="Attachment2"
+        accept="image/png, .zip, .doc, .xlsx, .xls, .csv, .docx, .pdf"
+        onchange={handleFilesChange2}
+        multiple>
+        </lightning-input>
+        
+       
+                
+        <button 
+        class="slds-button slds-button_brand slds-align_absolute-center Btn_A " 
+        icon-name="utility:send"
+        onclick={SendFile2} 
+        disabled={loading}
+        >
+        guardar
+        </button>
+
+  <!--Mas de un archivo-->
+        
+        <div class="slds-m-around_medium w-30">  
+        <template for:each={einsteinUrl} for:item="file">
+        <img class="img" key={file.index}  src={file.img}>
+       </template>
+        </div>
+        <lightning-input type="file"
+        label="Attachment"
+        accept="image/png, image/jpg, .zip, .doc, .xlsx, .xls, .csv, .docx, .pdf"
+        onchange={handleFilesChange}
+        multiple>
+        </lightning-input>
+        
+
+        <template for:each={fileDataPlural} for:item="documento">  
+          <div class='ArchivoAbjunto' key={documento.id} >{documento.filename}</div>
+         </template>
+
+        <button 
+        class="slds-button slds-button_brand slds-align_absolute-center Btn_A " 
+        icon-name="utility:send"
+        onclick={SendFile} 
+        disabled={loading}
+        >
+          guardar mas de 1 archivo
+        </button>
+                
+   </div> 
+</template>

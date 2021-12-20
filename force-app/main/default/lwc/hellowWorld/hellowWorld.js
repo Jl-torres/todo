@@ -1,4 +1,4 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track , api} from 'lwc';
 import addTodo from '@salesforce/apex/ToDoController.addTodo';
 import getCurrentTodos from '@salesforce/apex/ToDoController.getCurrentTodos';
 
@@ -8,6 +8,21 @@ export default class HellowWorld extends LightningElement {
 
     connectedCallback() {
         this.fetchTodos();
+    }
+
+    boatId;
+
+    @api
+    get recordId() {
+        return this.boatId;
+    }
+    set recordId(value) {
+        //sets boatId attribute
+        this.setAttribute('boatId', value);        
+        //sets boatId assignment
+        this.boatId = value;
+
+        //console.log('value' , value)
     }
 
     //Lista de Tareas
@@ -37,7 +52,7 @@ export default class HellowWorld extends LightningElement {
        }
 
        addTodo({payload:JSON.stringify(todo)}).then(response => {
-           console.log(response)
+           //console.log(response)
            this.fetchTodos();
 
        }).catch(error => {

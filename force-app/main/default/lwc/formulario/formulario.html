@@ -1,0 +1,78 @@
+<template>
+  <!-- form -->
+    <div class="form">
+            <h1 class="slds-align_absolute-center slds-text-heading_large font_A">Titulo</h1>
+            <div class="field-wrap"> 
+            <lightning-input
+            type="tel"
+            label="Telephone"
+            value="343-343-3434"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            >
+            </lightning-input>
+          </div>
+                 
+            <div class="field-wrap">
+              <lightning-input name="Account Name" placeholder="Numero de Caso" onchange={accountChangeHandler} ></lightning-input>
+            </div>
+            
+            <div class="field-wrap">
+              <lightning-input name="Account Phone" placeholder="Apellido" type="phone" onchange={accountChangeHandler} ></lightning-input>
+            </div>
+            <br>
+            <template if:false={show}>
+              <span class="slds-align_absolute-center slds-notify slds-notify_alert slds-alert_error">Todos los Campos son Obligaotios</span>
+            </template> 
+                    
+            <button 
+            class="slds-button slds-button_brand slds-align_absolute-center Btn_A " 
+            icon-name="utility:send"
+            onclick={searchByCase} >
+              Realizar busqueda
+            </button>
+                    
+       </div> 
+  <!-- /form -->
+  
+    </template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--<br>
+  <lightning-card >
+    <lightning-layout >
+        <lightning-layout-item size="12" padding="around-small">
+            <div class="Pdd">
+                <h1 class="slds-align_absolute-center slds-text-heading_large font_A">Titulo</h1>
+                <lightning-input name="Account Name2" label="Name" onchange={accountChangeHandler} ></lightning-input>
+                <lightning-input name="Account Phone2" type="phone" label="Phone" onchange={accountChangeHandler} ></lightning-input> 
+                <br>
+                <button 
+               class="slds-button slds-button_brand slds-align_absolute-center Btn_A " 
+               onclick={createAccount} >
+               Create Account
+               </button>
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small">
+
+        </lightning-layout-item>
+    </lightning-layout>
+</lightning-card>-->
+
+ <!-- <lightning-button 
+                class="slds-m-top_large"  
+                label="Create Account" 
+                onclick={createAccount} 
+                variant="brand" ></lightning-button>-->

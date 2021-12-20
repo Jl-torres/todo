@@ -1,0 +1,8 @@
+.D-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.w-80{
+    width: 10%;
+}

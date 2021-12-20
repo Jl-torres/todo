@@ -19,6 +19,7 @@ medium-device-size="10" class="slds-m-top_large">
 </lightning-layout-item> 
   <!--List of items-->
   <lightning-layout-item size="12">
+    
     <div class="slds-var-m-top_large slds-text-heading_label">UPCOMING</div>
     <template for:each={upcomingTodos} for:item="todo">
       <c-todo-item key={todo.todoId} todo={todo} 

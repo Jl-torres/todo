@@ -1,0 +1,96 @@
+<template>
+    <div class="slds-card__body slds-card__body_inner formBox p_medium box_Form w-movil" >
+        <h1 class="slds-text-heading_medium font_A">Crear caso</h1>   
+        <c-hijo onpadre={hijo}></c-hijo>
+    <div class="slds-grid slds-wrap"> 
+     <template if:true={isLoading}> 
+     <lightning-spinner alternative-text="Loading" size="large" variant="brand"></lightning-spinner>   
+     </template>        
+     <!--GENERAL Start-->
+    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 p-x">    
+    <label class="slds-form-element__label label" for="Subject">Nombre del contacto</label>  
+    
+      <lightning-input
+      type="tel"
+      label="Telephone"
+      value="343-343-3434"
+      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+      >
+      </lightning-input>
+  
+    <lightning-input 
+    class="input"
+    name="FirstName" 
+    required
+    message-when-value-missing = 'Este campo es obligatorio.'
+    type="text" 
+    onchange={formChangeContact}
+    >  
+  </lightning-input>
+    </div>
+
+    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 p-x">    
+        <label class="slds-form-element__label label" for="Subject">Apellido del contacto</label>      
+        <lightning-input 
+        class="input"
+        name="LastName" 
+        required
+        message-when-value-missing = 'Este campo es obligatorio.'
+        type="text" 
+        onchange={formChangeContact}
+        ></lightning-input>
+        </div>
+
+  
+     <div class="slds-col slds-large-size_6-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 p-x">    
+        <label class="slds-form-element__label label">caso</label>      
+        <lightning-input 
+        class="input"
+        name="SuppliedName" 
+        type="text" 
+        required
+        message-when-value-missing = 'Este campo es obligatorio.'
+        onchange={hanledchangeCase}
+        ></lightning-input> 
+      </div>
+
+      <div class="slds-col slds-large-size_6-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 p-x">    
+        <label class="slds-form-element__label label" for="Subject">origen</label>     
+        <lightning-combobox
+        name="Origin"
+        class="w-100 input"
+        value={value}
+        placeholder="Seleccione el tipo de Identificación"
+        required
+        message-when-value-missing = 'Este campo es obligatorio.'
+        options={options_origin}
+        onchange={handledChangeOring}
+        >
+        </lightning-combobox> 
+      </div>  
+    
+    <div if:true={Show_email}  class="slds-col slds-large-size_6-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 p-x">
+    <label class="slds-form-element__label label" for="Subject">Email</label> <!---->
+    <lightning-input 
+    class="input email"
+    name="Email" 
+    type="email" 
+    onchange={formChangeContact}
+    required={Show_email}
+    message-when-value-missing = 'Si el origen es correo electrónico Debe llenar este campo.'
+    ></lightning-input>
+    </div>        
+    
+</div> 
+<br/>
+<div class="box-Boton-A">    
+  <button 
+  class="slds-button slds-button_brand slds-align Btn_A slds-text-heading_small" 
+  onclick={Send}
+  >
+  ENVIAR
+  <lightning-icon class="slds-m-left_small icon_A" icon-name="utility:send" size="xx-small" alternative-text="Enviar" title="Enviar" ></lightning-icon> 
+  </button> 
+</div>
+</div>
+</template>

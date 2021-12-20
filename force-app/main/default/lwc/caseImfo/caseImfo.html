@@ -1,0 +1,18 @@
+<template>
+    <lightning-card class="slds-is-relative">
+        <!-- No show-->   
+        <template if:false={show}>
+        <span class={StyleAdvertencia}>{msgCaso}</span>
+        </template>    
+        <!-- show -->
+        <template if:true={show}>
+        <lightning-layout>
+        <lightning-layout-item size="12" padding="around-small">    
+        <span>ID:{messages.Id}</span> <br>
+        <span>Caso Nº: {messages.CaseNumber} </span> <br>
+        <span>Nombre Completo: {messages.LastName} </span>  
+       </lightning-layout-item>
+       </lightning-layout>
+       </template>    
+    </lightning-card>
+</template>

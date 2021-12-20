@@ -1,0 +1,142 @@
+.font_A{
+    font-weight: bold;
+    color: #0033A0; /*white !important;*/
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.label {
+    color: #0033a0;
+    /*font-size: 14px;*/
+    display: flex !important;
+    height: 10px;
+    /*CSS de la pagina*/
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    letter-spacing: -.25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box_Description{
+    max-height: 130px !important;
+    /*min-height: 50px ;*/
+}
+
+
+.slds-form-element__label {
+    display: flex !important;
+}
+
+.formBox{
+    background: #ecf0f1; /*linear-gradient( 90deg ,#00AFC9 0%, #0033A0 100%);*/
+    margin: auto;
+    border-radius:20px;
+    /*border-radius: 10px;*/
+}
+
+.p_medium{
+    padding: 40px 8% 30px 8% !important; 
+}
+
+.p_small{
+    padding: 15px 8% 30px 8% !important; 
+}
+
+.Btn_A {
+    width: 100%;
+    padding: 10px 0px;
+    background:#0033A0; /*#00AEC7;*/
+    color: white; /*#0033A0;*/
+    font-weight: 900;
+    /*font-weight: bold;*/
+    border-radius: 100px;
+    border: none;
+}
+
+.box-Boton-A {
+    margin-top:20px;
+    width: 30%;
+    margin: auto;
+}
+
+/*.Label label {
+   font-family: ;
+}*/
+
+:host {   
+--sds-c-input-text-color :#0033A0;
+--sds-c-input-text-color-focus:#0033A0;
+--sds-c-input-radius-border : 50px;
+/*--sds-c-input-color-border-focus: #E3E829 !important;*/
+--sds-c-textarea-sizing-min-height: 100px;
+font-weight: bold !important;
+}
+
+.fileinput{
+    color:#0033A0 !important; /*#0033A0 !important*/
+}
+
+.ArchivoAbjuntotext{
+    color: #0033A0; /*white;*/
+    /*font-weight: bold;*/
+    /*CSS de la pagina*/
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    letter-spacing: -.25px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.p-x {
+    padding: 15px 20px 0px 20px !important;
+}
+
+.text_J {
+    text-align: justify;
+}
+
+.D_flex{
+    display: flex;
+}
+
+/* Scroll Personalizado */
+
+.scroll::-webkit-scrollbar {
+	width: 7px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+	background: #00AEC7;
+	border-radius: 10px;
+    height: 80px;
+}
+
+.color-link{
+    color:white;
+    text-decoration:underline;
+}
+
+@media (max-width:768px){
+    .box-Boton-A {
+        width: 100%;
+    }
+
+    .p-x{
+        padding:0px !important; 
+    }
+
+    .w-movil{
+        width: 95% !important;
+        margin: auto;
+    }
+}

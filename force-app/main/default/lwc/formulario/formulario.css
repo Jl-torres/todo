@@ -1,0 +1,22 @@
+.font_A {
+    font-weight: bold;
+}
+
+.Btn_A {
+    background: #00AEC7;
+    color:white;
+    padding: 0.2rem 1rem;
+    border: none; 
+    margin-top: 30px;
+}
+
+.form {
+    background:white;
+    padding: 30px 40px;
+    margin:0px auto;
+    border-radius:4px;
+    /*box-shadow:0 4px 10px 4px hsla(221, 100%, 31%, 0.5)*/
+  }
+
+
+  
